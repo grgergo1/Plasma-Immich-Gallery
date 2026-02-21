@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "NotDonnovan"
+            }
+        ],
+        "Category": "Photos",
+        "Description": "Display photos from your immich.app photo server",
+        "Icon": "image-x-generic",
+        "Id": "com.notd.immich-gallery",
+        "License": "GPL-2.0+",
+        "Name": "Immich Gallery",
+        "Version": "1.0.1",
+        "Website": "https://github.com/NotDonnovan/Plasma-Immich-Gallery"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

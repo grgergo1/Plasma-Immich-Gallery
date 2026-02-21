@@ -1,0 +1,21 @@
+# KDE/Plasma build artifacts
+*.qmlc
+*.jsc
+
+# Package archives
+*.plasmoid
+*.tar.gz
+*.zip
+
+# Editor files
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+
+# OS files
+.DS_Store
+Thumbs.db
