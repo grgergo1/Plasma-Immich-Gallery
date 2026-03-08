@@ -64,7 +64,10 @@ Item {
     Image {
         id: photoImage
         anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
+        fillMode: rootWidget.fillMode == "fill" ? Image.PreserveAspectCrop
+                : rootWidget.fillMode == "fit" ? Image.PreserveAspectFit
+                : rootWidget.fillMode == "stretch" ? Image.Stretch
+                : Image.Tile
         asynchronous: true
         cache: false
 

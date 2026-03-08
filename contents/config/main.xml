@@ -52,5 +52,8 @@
         <entry name="dailyResetHour" type="Int">
             <default>0</default>
         </entry>
+        <entry name="fillMode" type="String">
+            <default>Fill</default>
+        </entry>
     </group>
 </kcfg>

@@ -34,6 +34,7 @@ PlasmoidItem {
     readonly property double widgetOpacity:    Plasmoid.configuration.widgetOpacity
     readonly property bool   noBorder:         Plasmoid.configuration.noBorder
     readonly property int    dailyResetHour:   Plasmoid.configuration.dailyResetHour
+    readonly property string fillMode:         Plasmoid.configuration.fillMode
 
     Plasmoid.backgroundHints: noBorder ? PlasmaCore.Types.NoBackground
                                        : PlasmaCore.Types.DefaultBackground

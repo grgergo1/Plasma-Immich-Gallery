@@ -26,6 +26,7 @@ KCM.SimpleKCM {
     property double cfg_widgetOpacity:     1.0
     property bool   cfg_noBorder:          false
     property int    cfg_dailyResetHour:    0
+    property string cfg_fillMode:          "fill"
 
     // Read-only mirrors — needed for album/person API calls in pickers
     property string cfg_serverUrl: ""
@@ -48,6 +49,7 @@ KCM.SimpleKCM {
     property double cfg_widgetOpacityDefault:    1.0
     property bool   cfg_noBorderDefault:         false
     property int    cfg_dailyResetHourDefault:   0
+    property string cfg_fillModeDefault:          "fill"
 
     // ------------------------------------------------------------------
     // Local multi-select state (arrays, synced from cfg_ strings)
@@ -81,6 +83,10 @@ KCM.SimpleKCM {
         viewModeCombo.currentIndex = (cfg_viewMode === "daily") ? 1 : 0;
     }
     onCfg_contentSourceChanged: {
+        var idx = sourceCombo.sourceValues.indexOf(cfg_contentSource);
+        sourceCombo.currentIndex = (idx >= 0) ? idx : 0;
+    }
+    onCfg_fillModeChanged: {
         var idx = sourceCombo.sourceValues.indexOf(cfg_contentSource);
         sourceCombo.currentIndex = (idx >= 0) ? idx : 0;
     }
@@ -352,6 +358,17 @@ KCM.SimpleKCM {
                 text: Math.round(opacitySlider.value * 100) + "%"
                 Layout.minimumWidth: Kirigami.Units.gridUnit * 2
             }
+        }
+
+        QQC2.ComboBox {
+            id: fillCombo
+            Kirigami.FormData.label: i18n("Fill mode:")
+            model: [
+                i18n("Fill"), i18n("Fit"), i18n("Stretch"),
+                i18n("Tile")
+            ]
+            property var sourceValues: ["fill","fit","stretch","tile"]
+            onActivated: cfg_fillMode = sourceValues[currentIndex]
         }
     }
 }

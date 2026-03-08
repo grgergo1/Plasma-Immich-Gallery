@@ -95,7 +95,10 @@ Item {
     Image {
         id: imageA
         anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
+        fillMode: rootWidget.fillMode == "fill" ? Image.PreserveAspectCrop
+                : rootWidget.fillMode == "fit" ? Image.PreserveAspectFit
+                : rootWidget.fillMode == "stretch" ? Image.Stretch
+                : Image.Tile
         asynchronous: true
         cache: false
         opacity: showingA ? 1.0 : 0.0
@@ -107,7 +110,10 @@ Item {
     Image {
         id: imageB
         anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
+        fillMode: rootWidget.fillMode == "fill" ? Image.PreserveAspectCrop
+                : rootWidget.fillMode == "fit" ? Image.PreserveAspectFit
+                : rootWidget.fillMode == "stretch" ? Image.Stretch
+                : Image.Tile
         asynchronous: true
         cache: false
         opacity: showingA ? 0.0 : 1.0
